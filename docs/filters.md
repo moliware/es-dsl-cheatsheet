@@ -1,5 +1,3 @@
-# Filters
-
 | Name | description | cached? | syntax |
 |----------|-------------|------|--|
 | [and][and] | Applies `AND` on a list of filters | Not by default | {"and": [] } |

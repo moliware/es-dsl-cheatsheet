@@ -1,5 +1,3 @@
-# Queries
-
 | Name | description | analysis? | syntax |
 |----------|-------------|------|--|
 | [bool][bool] | Boolean combiantions of queries | - | {"bool": {"must": [], "must_not": [], "should": []}} |
