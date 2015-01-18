@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Elasticsearch query DSL cheat sheet</title>
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div id="includedContent"></div>
+  </div>
+  <script>
+    $.get('/docs/filters.md', function(data) {
+      document.getElementById('includedContent').innerHTML =
+      marked(data);
+    });
+  </script>
+</body>
+</html>
