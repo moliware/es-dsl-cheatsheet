@@ -1,9 +1,9 @@
-| Name | description | cached? | syntax |
-|----------|-------------|------|--|
-| [and][and]                                             | Applies `AND` on a list of filters | Not by default | {"and": [] } |
-| [bool][bool]                                           | Boolean combiantions of filters | Not by default | {"bool": {"must": [], "must_not": [], "should": []}} |
-| [exists][exists]                                       | Have at least one non-null value in the field | Yes | {"exists": {"field": "*field_name*"}} |
-| [geo_bounding_box][geo_bounding_box] | | | |
+| Name                                                   | description                                   | cached by default? | syntax |
+|--------------------------------------------------------|-----------------------------------------------|--------------------|--------|
+| [and][and]                                             | Applies `AND` on a list of filters            | No                 | {"and": [] } |
+| [bool][bool]                                           | Boolean combiantions of filters               | No                 | {"bool": {"must": [], "must_not": [], "should": []}} |
+| [exists][exists]                                       | Have at least one non-null value in the field | Yes                | {"exists": {"field": "*field_name*"}} |
+<!-- | [geo_bounding_box][geo_bounding_box] | | | |
 | [geo_distance][geo_distance] | | | |
 | [geo_distance_range_filter][geo_distance_range_filter] | | | |
 | [geo_polygon_filter][geo_polygon_filter] | | | |
@@ -26,7 +26,7 @@
 | [script][script] | | | |
 | [term][term] | | | |
 | [terms][terms] | | | |
-| [type][type] | | | |
+| [type][type] | | | | -->
 
 [and]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-and-filter.html
 [bool]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html

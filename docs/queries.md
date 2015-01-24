@@ -1,9 +1,9 @@
 | Name | description | syntax |
 |----------|-------------|------|--|
-| [match][match] | | |
-| [multi_match][multi_match] | | |
-| [bool][bool] | Boolean combiantions of queries | {"bool": {"must": [], "must_not": [], "should": []}} |
-| [boosting][boosting] | | |
+| [match][match]                                 | Accept text/numerics/dates, analyzes it, and constructs a query out of it | { "match" : { "field_name" : "query text" }} |
+| [multi_match][multi_match]                     | `match` query that allows multifield                                      | { "multi_match" : { "query": "query text", "fields": [ "field1", "field2" ] }} |
+| [bool][bool]                                   | Boolean combiantions of queries                                           | {"bool": {"must": [], "must_not": [], "should": []}} |
+<!-- | [boosting][boosting] | | |
 | [common_terms][common_terms] | | |
 | [constant_score][constant_score] | | |
 | [dis_max][dis_max] | | |
@@ -38,7 +38,7 @@
 | [wildcard][wildcard] | | |
 | [minimum_should_match][minimum_should_match] | | |
 | [multi_term_rewrite][multi_term_rewrite] | | |
-| [template][template] | | |
+| [template][template] | | | -->
 
 [match]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-match-query.html
 [multi_match]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html

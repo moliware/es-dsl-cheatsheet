@@ -1,7 +1,7 @@
 var renderer = new marked.Renderer();
 
 renderer.table = function (header, body) {
-  return '<table class="table table-condensed">\n'
+  return '<table class="table-responsive table-condensed table-hover">\n'
     + '<thead>\n'
     + header
     + '</thead>\n'
