@@ -1,8 +1,12 @@
-| Name | description | syntax |
+| Name | description | analyzed? | syntax |
 |----------|-------------|------|--|
-| [match][match]                                 | Accept text/numerics/dates, analyzes it, and constructs a query out of it | { "match" : { "field_name" : "query text" }} |
-| [multi_match][multi_match]                     | `match` query that allows multifield                                      | { "multi_match" : { "query": "query text", "fields": [ "field1", "field2" ] }} |
-| [bool][bool]                                   | Boolean combiantions of queries                                           | {"bool": {"must": [], "must_not": [], "should": []}} |
+| [match][match]                                 | Accept text/numerics/dates, analyzes it, and constructs a query out of it | Yes |<a href="#" class="copy">{ "match" : { "field_name" : "query text" }}<span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a> |
+| [multi_match][multi_match]                     | `match` query that allows multifield                                      | Yes | { "multi_match" : { "query": "query text", "fields": [ "field1", "field2" ] }} |
+| [term][term]                                   | Matches a document if the field queried contains a term                   | No  | { "term" : { "field_name" : "term" } } |
+| [terms][terms]                                 | `term` query that allows multifield                                       | No  | { "terms" : { "field_name" : [ "term1", "term2" ] } } |
+| [bool][bool]                                   | Boolean combiantions of queries                                           | -   | {"bool": {"must": [], "must_not": [], "should": []}} |
+| [query_string][query_string]                   | Query using a mini languange that includes typical search opertors        | Yes | { "query_string" : { "fields" : ["field1", "field2"], "query" : "this AND that OR thus" } } |
+| [simple_query_string][simple_query_string]     | Simplified version of `query_string` that never throws a exception        | Yes | { "query_string" : { "fields" : ["field1", "field2"], "query" : "this AND that OR thus" } } |
 <!-- | [boosting][boosting] | | |
 | [common_terms][common_terms] | | |
 | [constant_score][constant_score] | | |
@@ -22,8 +26,6 @@
 | [more_like_this_field][more_like_this_field] | | |
 | [nested][nested] | | |
 | [prefix][prefix] | | |
-| [query_string][query_string] | | |
-| [simple_string][simple_string] | | |
 | [range][range] | | |
 | [regexp][regexp] | | |
 | [span_first][span_first] | | |
@@ -32,8 +34,6 @@
 | [span_not][span_not] | | |
 | [span_or][span_or] | | |
 | [span_term][span_term] | | |
-| [term][term] | | |
-| [terms][terms] | | |
 | [top_children][top_children] | | |
 | [wildcard][wildcard] | | |
 | [minimum_should_match][minimum_should_match] | | |
@@ -63,7 +63,7 @@
 [nested]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html
 [prefix]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-prefix-query.html
 [query_string]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html
-[simple_string]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html
+[simple_query_string]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html
 [range]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-range-query.html
 [regexp]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html
 [span_first]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-span-first-query.html
