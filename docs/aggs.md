@@ -1,10 +1,12 @@
-| Name | description | syntax |
-|----------|-------------|------|--|
-| [min] | | |
+| Name        | description                                                       | syntax |
+|-------------|-------------------------------------------------------------------|--------|
+| [terms]     | One per uniq value of the field                                   | {"*agg_name*" : { "terms" : { "field" : "*field_name*"}}}|
+| [stats]     | Calculates `min`, `max`, `avg`, `sum`, `count` of a numeric field | {"*agg_name*" : { "stats" : { "field" : "*field_name*"}}}|
+| [histogram] | Builds fixed size bucket overt the values of a numeric field      | {"*agg_name*" : { "histogram" : { "field" : "*field_name*", "interval": *bucket_size*}}}|
+<!-- | [min] | | |
 | [max] | | |
 | [sum] | | |
 | [avg] | | |
-| [stats] | | |
 | [extended_stats] | | |
 | [value_count] | | |
 | [percentiles] | | |
@@ -20,15 +22,13 @@
 | [nested] | | |
 | [reverse_nested] | | |
 | [children] | | |
-| [terms] | | |
 | [significant_terms] | | |
 | [range] | | |
 | [date_range] | | |
 | [ipv4_range] | | |
-| [histogram] | | |
 | [date_histogram] | | |
 | [geo_distance] | | |
-| [geohash_grid] | | |
+| [geohash_grid] | | | -->
 
 [min]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-metrics-min-aggregation.html
 [max]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-metrics-max-aggregation.html

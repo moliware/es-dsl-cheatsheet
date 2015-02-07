@@ -1,12 +1,12 @@
-| Name | description | analyzed? | syntax |
-|----------|-------------|------|--|
+| Name                                           | description                                                               | analyzed? | syntax |
+|------------------------------------------------|---------------------------------------------------------------------------|-----|--|
 | [match][match]                                 | Accept text/numerics/dates, analyzes it, and constructs a query out of it | Yes |<a href="#" class="copy">{ "match" : { "field_name" : "query text" }}<span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a> |
 | [multi_match][multi_match]                     | `match` query that allows multifield                                      | Yes | { "multi_match" : { "query": "query text", "fields": [ "field1", "field2" ] }} |
 | [term][term]                                   | Matches a document if the field queried contains a term                   | No  | { "term" : { "field_name" : "term" } } |
 | [terms][terms]                                 | `term` query that allows multifield                                       | No  | { "terms" : { "field_name" : [ "term1", "term2" ] } } |
 | [bool][bool]                                   | Boolean combiantions of queries                                           | -   | {"bool": {"must": [], "must_not": [], "should": []}} |
 | [query_string][query_string]                   | Query using a mini languange that includes typical search opertors        | Yes | { "query_string" : { "fields" : ["field1", "field2"], "query" : "this AND that OR thus" } } |
-| [simple_query_string][simple_query_string]     | Simplified version of `query_string` that never throws a exception        | Yes | { "query_string" : { "fields" : ["field1", "field2"], "query" : "this AND that OR thus" } } |
+| [simple_query_string][simple_query_string]     | Simplified version of `query_string` that never throws a exception        | Yes | { "simple_query_string" : { "fields" : ["field1", "field2"], "query" : "+a -b +(c & d)" } } |
 <!-- | [boosting][boosting] | | |
 | [common_terms][common_terms] | | |
 | [constant_score][constant_score] | | |
