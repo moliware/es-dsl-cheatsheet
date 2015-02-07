@@ -1,6 +1,6 @@
 | Name                                           | description                                                               | analyzed? | syntax |
 |------------------------------------------------|---------------------------------------------------------------------------|-----|--|
-| [match][match]                                 | Accept text/numerics/dates, analyzes it, and constructs a query out of it | Yes |<a href="#" class="copy">{ "match" : { "field_name" : "query text" }}<span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a> |
+| [match][match]                                 | Accept text/numerics/dates, analyzes it, and constructs a query out of it | Yes | { "match" : { "field_name" : "query text" }} |
 | [multi_match][multi_match]                     | `match` query that allows multifield                                      | Yes | { "multi_match" : { "query": "query text", "fields": [ "field1", "field2" ] }} |
 | [term][term]                                   | Matches a document if the field queried contains a term                   | No  | { "term" : { "field_name" : "term" } } |
 | [terms][terms]                                 | `term` query that allows multifield                                       | No  | { "terms" : { "field_name" : [ "term1", "term2" ] } } |
