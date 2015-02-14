@@ -1,13 +1,13 @@
 | Name        | description                                                       | syntax |
 |-------------|-------------------------------------------------------------------|--------|
 | [terms]     | One per uniq value of the field                                   | {"*agg_name*" : { "terms" : { "field" : "*field_name*"}}}|
-| [stats]     | Calculates `min`, `max`, `avg`, `sum`, `count` of a numeric field | {"*agg_name*" : { "stats" : { "field" : "*field_name*"}}}|
-| [histogram] | Builds fixed size bucket overt the values of a numeric field      | {"*agg_name*" : { "histogram" : { "field" : "*field_name*", "interval": *bucket_size*}}}|
-<!-- | [min] | | |
-| [max] | | |
-| [sum] | | |
-| [avg] | | |
-| [extended_stats] | | |
+| [histogram] | Builds fixed size bucket overt the values of a numeric field      | {"agg_name" : { "histogram" : { "field" : "field_name", "interval": bucket_size}}}|
+| [min]       | Calculates minimum value of a numeric field                       | { "agg_name" : { "min" : {"field" : "field_name"}}}|
+| [max]       | Calculates maximun value of a numeric field                       | { "agg_name" : { "min" : {"field" : "field_name"}}}|
+| [sum]       | Sums up all values of a numeric field                             | { "agg_name" : { "sum" : {"field" : "field_name"}}}|
+| [avg]       | Computes the average of a numeric field                           | { "agg_name" : { "avg" : {"field" : "field_name"}}}|
+| [stats]     | Calculates `min`, `max`, `avg`, `sum`, `count` of a numeric field | {"agg_name" : { "stats" : { "field" : "field_name"}}}|
+<!-- | [extended_stats] | | |
 | [value_count] | | |
 | [percentiles] | | |
 | [percentile_ranks] | | |
