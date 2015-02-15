@@ -4,9 +4,12 @@
 | [multi_match][multi_match]                     | `match` query that allows multifield                                      | Yes | { "multi_match" : { "query": "query text", "fields": [ "field1", "field2" ] }} |
 | [term][term]                                   | Matches a document if the field queried contains a term                   | No  | { "term" : { "field_name" : "term" } } |
 | [terms][terms]                                 | `term` query that allows multifield                                       | No  | { "terms" : { "field_name" : [ "term1", "term2" ] } } |
-| [bool][bool]                                   | Boolean combiantions of queries                                           | -   | {"bool": {"must": [], "must_not": [], "should": []}} |
+| [bool][bool]                                   | Boolean combiantions of queries                                           | -   | { "bool": {"must": [], "must_not": [], "should": []}} |
 | [query_string][query_string]                   | Query using a mini languange that includes typical search opertors        | Yes | { "query_string" : { "fields" : ["field1", "field2"], "query" : "this AND that OR thus" } } |
 | [simple_query_string][simple_query_string]     | Simplified version of `query_string` that never throws a exception        | Yes | { "simple_query_string" : { "fields" : ["field1", "field2"], "query" : "+a -b +(c & d)" } } |
+| [function_score][function_score]               | Modifies score of resulting documents of a query                          | -   | { "function_score": { "query OR filter": {}, "boost": "boost for the whole query", "functions": [], "boost_mode":"(multiply|replace|...)"} }|
+| [range][range]                                 | Matches documents with fields that have terms within a certain range      | -   | { "range" : { "*field_name*" : { "gte": 1, "lte": 100 } } } |
+| [nested][nested]                               | Query against nested documents                                            | -   | { "nested" : { "path" : "nested_field", "score_mode" : "avg", "query" : {} } } |
 <!-- | [boosting][boosting] | | |
 | [common_terms][common_terms] | | |
 | [constant_score][constant_score] | | |
@@ -14,7 +17,6 @@
 | [filtered][filtered] | | |
 | [fuzzy_like_this][fuzzy_like_this] | | |
 | [fuzzy_like_this_field][fuzzy_like_this_field] | | |
-| [function_score][function_score] | | |
 | [fuzzy][fuzzy] | | |
 | [geoshape][geoshape] | | |
 | [has_child][has_child] | | |
@@ -24,9 +26,7 @@
 | [match_all][match_all] | | |
 | [more_like_this][more_like_this] | | |
 | [more_like_this_field][more_like_this_field] | | |
-| [nested][nested] | | |
 | [prefix][prefix] | | |
-| [range][range] | | |
 | [regexp][regexp] | | |
 | [span_first][span_first] | | |
 | [span_multi_term][span_multi_term] | | |
