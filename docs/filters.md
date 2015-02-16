@@ -2,6 +2,7 @@
 |--------------------------------------------------------|-----------------------------------------------|--------------------|--------|
 | [and][and]                                             | Applies `AND` on a list of filters            | No                 | {"and": [] } |
 | [or][or]                                               | Applies `OR` on a list of filters             | No                 | {"or": [] } |
+| [not][not]                                             | Exclude documents that match a query          | No                 | {"not": {} } |
 | [bool][bool]                                           | Boolean combiantions of filters               | No                 | {"bool": {"must": [], "must_not": [], "should": []}} |
 | [exists][exists]                                       | Have at least one non-null value in the field | Yes                | {"exists": {"field": "*field_name*"}} |
 | [range][range]                                         | Documents that have terms within a range      | [Yes][range_cache] | {"range" : {"*field_name*" : { "gte": 1, "lte": 100}}} |
@@ -9,6 +10,8 @@
 | [terms][terms]                                         | Documents that contain any term on the list   | Yes                | {"terms" : { "*field_name*" : ["*term1*", "*term2*"]}} |
 | [query][query]                                         | Wrap a query to be used as a filter           | No                 | {"query" : { *your_query* } }|
 | [script][script]                                       | Define a script as a filter                   | No                 | {"script" : {"script" : "doc['num1'].value > 1"} |
+| [ids][ids]                                             | Documents whose id is in the list             | No                 | {"ids" : {"values" : ["id1", "id2"]}} |
+| [type][type]                                           | Documents of the provided type                | No                 | {"type": {"value": "my_type"}} |
 <!-- | [geo_bounding_box][geo_bounding_box] | | | |
 | [geo_distance][geo_distance] | | | |
 | [geo_distance_range_filter][geo_distance_range_filter] | | | |
@@ -17,16 +20,14 @@
 | [geohash_cell][geohash_cell] | | | |
 | [has_child][has_child] | | | |
 | [has_parent][has_parent] | | | |
-| [ids][ids] | | | |
 | [indices][indices] | | | |
 | [limit][limit] | | | |
 | [match_all][match_all] | | | |
 | [missing][missing] | | | |
 | [nested][nested] | | | |
-| [not][not] | | | |
 | [prefix][prefix] | | | |
 | [regexp][regexp] | | | |
-| [type][type] | | | | -->
+ -->
 
 [and]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-and-filter.html
 [bool]: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html
