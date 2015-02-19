@@ -7,7 +7,7 @@
 | [bool][bool]                                   | Boolean combiantions of queries                                           | -   | { "bool": {"must": [], "must_not": [], "should": []}} |
 | [query_string][query_string]                   | Query using a mini languange that includes typical search opertors        | Yes | { "query_string" : { "fields" : ["field1", "field2"], "query" : "this AND that OR thus" } } |
 | [simple_query_string][simple_query_string]     | Simplified version of `query_string` that never throws a exception        | Yes | { "simple_query_string" : { "fields" : ["field1", "field2"], "query" : "+a -b +(c & d)" } } |
-| [function_score][function_score]               | Modifies score of resulting documents of a query                          | -   | { "function_score": { "query OR filter": {}, "boost": "boost for the whole query", "functions": [], "boost_mode":"(multiply|replace|...)"} }|
+| [function_score][function_score]               | Modifies score of resulting documents of a query                          | -   | { "function_score": { "query/filter": {}, "boost": "boost for the whole query", "functions": [], "boost_mode":"(multiply/replace/...)"} }|
 | [range][range]                                 | Matches documents with fields that have terms within a certain range      | -   | { "range" : { "*field_name*" : { "gte": 1, "lte": 100 } } } |
 | [nested][nested]                               | Query against nested documents                                            | -   | { "nested" : { "path" : "nested_field", "score_mode" : "avg", "query" : {} } } |
 <!-- | [boosting][boosting] | | |
